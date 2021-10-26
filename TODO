@@ -1,0 +1,7 @@
+i/o
+---
+- read points from file
+
+misc
+----
+$ grep -nE 'XXX|TODO' .

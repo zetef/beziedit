@@ -1,0 +1,10 @@
+bezier curve app
+----------------
+
+========================================
+
+run
+---
+
+a simple ``` $ love . ``` should just do the job.
+love2d 11.3 required
