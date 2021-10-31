@@ -34,6 +34,44 @@ comb = function(n, k)
 	return numer / denom
 end
 
+in_circle = function(theta)
+	local phi = theta
+	while phi >= math.pi do
+		phi = phi - math.pi
+	end
+	return phi
+end
+
+limit = function(v, min, max)
+	local s = v
+	if s < min then
+		s = min
+	elseif s > max then
+		s = max
+	end
+	return s
+end
+
+print_help = function()
+	love.graphics.print("M1 - drag points", 0, 45)
+	love.graphics.print("M2 - remove point", 0, 60)
+	love.graphics.print("M3 - add point to end", 0, 75)
+	love.graphics.print("Rotate mouse wheel to modify time of animation", 0, 90)
+	love.graphics.print("'space' - start animation", 0, 105)
+	love.graphics.print("'c' - clear bezier curve on screen", 0, 120)
+	love.graphics.print("'n' - get a new screen", 0, 135)
+	love.graphics.print("'q' - quit", 0, 150)
+	love.graphics.print("'s' - screenshot", 0, 165)
+end
+
+draw_triangle = function(x, y, length, width , angle) -- position, length, width and angle
+	love.graphics.push()
+	love.graphics.translate(x, y)
+	love.graphics.rotate(angle)
+	love.graphics.polygon('fill', -length/2, -width /2, -length/2, width /2, length/2, 0)
+	love.graphics.pop()
+end
+
 vec_sum = function(V1, V2)
         return { V1[1] + V2[1], V1[2] + V2[2] }
 end

@@ -4,7 +4,7 @@ lerp = function(P1, P2, t)
         return vec_sum( vec_prod(P1, {1-t, 1-t}), vec_prod(P2, {t, t}) )
 end
 
-bezier_point = function(points, t, text)
+bezier_point = function(points, t)
         -- abandon  ecursion altogether
         s = {[1] = 0, [2] = 0}
         n = #points
